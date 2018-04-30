@@ -16,7 +16,7 @@ let rec range (a :int) (b : int) : int list =
 (* Square the sum of the numbers up to the given number *)
 let square_of_sum (n : int) : int =
     let set = (range 0 n) in
-    let sum_of_set = (List.fold_left (fun x y -> x + y)
+    let sum_of_set = (List.fold_left (fun accumulator x -> accumulator + x)
                                      0
                                      set)
     in (sum_of_set * sum_of_set)
@@ -25,7 +25,7 @@ let square_of_sum (n : int) : int =
 (* Sum the squares of the numbers up to the given number *)
 let sum_of_squares (n : int) : int =
     let set = (range 0 n) in
-    let sum_of_set = (List.fold_left (fun x y -> x + (y * y))
+    let sum_of_set = (List.fold_left (fun accumulator x -> accumulator + (x * x))
                                      0
                                      set)
     in sum_of_set
